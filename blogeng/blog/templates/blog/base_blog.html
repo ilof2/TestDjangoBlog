@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block admin-panel %}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Create
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'create_post_url' %}">Post</a>
+    <a class="dropdown-item" href="{% url 'create_tag_url' %}">Tag</a>
+  </div>
+</div>
+    <a href="{{ admin_object.get_update_url }}" class="btn btn-light">Edit</a>
+    <a href="{{ admin_object.get_delete_url }}" class="btn btn-danger">Delete</a>
+{% endblock %}
